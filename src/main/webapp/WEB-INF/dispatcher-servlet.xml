@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="inMemoryDB" class="ir.maktabsharif.db.InMemoryDB"/>
+
+    <bean id="bookRepo" class="ir.maktabsharif.repo.BookRepoImpl">
+        <constructor-arg ref="inMemoryDB"/>
+    </bean>
+
+    <bean id="bookService" class="ir.maktabsharif.service.BookServiceImpl">
+        <constructor-arg ref="bookRepo"/>
+    </bean>
+
+    <bean id="bookListController" class="ir.maktabsharif.controller.BookListController">
+        <constructor-arg ref="bookService"/>
+    </bean>
+
+    <bean id="addBookController" class="ir.maktabsharif.controller.AddBookController"/>
+
+    <bean id="saveBookController" class="ir.maktabsharif.controller.SaveBookController">
+        <constructor-arg ref="bookService"/>
+    </bean>
+
+</beans>
