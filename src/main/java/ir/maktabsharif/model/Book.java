@@ -9,6 +9,7 @@ import java.math.BigDecimal;
 @Setter
 @Getter
 @Builder
+@ToString
 public class Book {
     private String title;
 

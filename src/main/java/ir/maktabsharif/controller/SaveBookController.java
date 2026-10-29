@@ -27,6 +27,7 @@ public class SaveBookController implements Controller {
 
         ModelAndView modelAndView = new ModelAndView("show");
 
+        modelAndView.addObject("title", "Book List");
         modelAndView.addObject("books", bookService.findAll());
 
         return modelAndView;

@@ -27,9 +27,9 @@
     <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
             <props>
-                <prop key="/list">bookListController</prop>
+                <prop key="/books">bookListController</prop>
                 <prop key="/add">addBookController</prop>
-                <prop key="/save">saveBookController</prop>
+                <prop key="/add/save">saveBookController</prop>
             </props>
         </property>
     </bean>
