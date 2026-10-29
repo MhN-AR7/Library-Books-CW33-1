@@ -19,11 +19,12 @@ public class BookListController implements Controller {
 
     @Override
     public @Nullable ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        ModelAndView modelAndView = new ModelAndView();
+        ModelAndView modelAndView = new ModelAndView("show");
 
         List<Book> books = bookService.findAll();
 
-        modelAndView.addObject("show", books);
+        modelAndView.addObject("title", "Book List");
+        modelAndView.addObject("books", books);
 
         return modelAndView;
     }
