@@ -1,0 +1,10 @@
+package ir.maktabsharif.service;
+
+import ir.maktabsharif.model.Book;
+
+import java.util.List;
+
+public interface BookService {
+    void addBook(Book book);
+    List<Book> findAll();
+}
